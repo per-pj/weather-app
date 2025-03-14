@@ -1,0 +1,230 @@
+/* --- Reset & Base Styles --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #fff;
+  font-size: 16px;
+  color: #000;
+  line-height: 1.6;
+  letter-spacing: 0.05rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Header --- */
+.header {
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #3572ef;
+}
+
+/* --- Navigation --- */
+.nav-list {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list-item + .nav-list-item {
+  margin-left: 20px;
+}
+
+.nav-list-item a {
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+.nav-list-item a:hover {
+  color: #3572ef;
+}
+
+/* --- Main Content --- */
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 80px); /* ヘッダー分を引いた高さ */
+  background-color: #f7f6f2;
+  padding: 2rem;
+}
+
+.content-container {
+  width: 100%;
+  max-width: 600px;
+  background-color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(20px);
+  box-shadow: 4px 4px 13px 5px rgba(0, 0, 0, 0.25);
+}
+
+.title {
+  font-weight: 800;
+  margin-bottom: 50px;
+}
+
+/* --- Form --- */
+#weather-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+#weather-form input[type='text'] {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #acabab;
+  flex: 1 1 200px;
+  padding: 8px 4px;
+  font-size: 1.25rem;
+  transition: border-color 0.3s ease;
+}
+
+#weather-form input[type='text']:focus {
+  border-color: darkblue;
+}
+
+#weather-form button {
+  background-color: #3572ef;
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+#weather-form button:hover {
+  opacity: 0.9;
+}
+
+/* --- 検索結果 --- */
+.results-city {
+  font-size: 4rem;
+}
+
+.results-country {
+  font-size: 2rem;
+}
+
+.results-temp {
+  font-size: 6rem;
+  margin: 10px 0;
+  color: #3572ef;
+}
+
+.results-temp > span {
+  font-size: 3rem;
+  color: #000;
+}
+
+.results-condition {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+}
+
+.city-input {
+  font-size: 1rem; /* 入力フィールドの文字サイズ */
+}
+
+.city-input::placeholder {
+  font-size: 1rem; /* プレースホルダの文字サイズ */
+  color: #6a6a6a;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.8em;
+  margin-top: 30px;
+}
+
+/* --- ローディング --- */
+.loading {
+  border: 4px solid #3572ef;
+  border-top: 4px solid #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+  }
+  .nav-list {
+    margin-top: 0.5rem;
+  }
+  #weather-form {
+    flex-direction: column;
+  }
+  #weather-form input[type='text'],
+  #weather-form button {
+    width: 100%;
+  }
+}

@@ -1,9 +1,45 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Skytracker | お天気情報を検索</title>
   </head>
-  <body></body>
+  <body>
+    <header class="header">
+      <div class="header-container">
+        <div class="logo">
+          <a href="./index.html">Skytracker</a>
+        </div>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li class="nav-list-item">
+              <a href="./about.html">Skytrackerとは</a>
+            </li>
+            <li class="nav-list-item">
+              <a href="./contact.html">お問い合わせ</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="wrapper">
+      <div class="content-container">
+        <h1 class="title">天気情報を調べましょう。</h1>
+        <form id="weather-form">
+          <input
+            id="city-input"
+            class="city-input"
+            type="text"
+            placeholder="都市名を英語で入力"
+          />
+          <button type="submit">無料で検索</button>
+        </form>
+        <div id="weather-results"></div>
+      </div>
+    </main>
+    <script src="./app.js"></script>
+  </body>
 </html>
