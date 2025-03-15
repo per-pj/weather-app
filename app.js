@@ -16,7 +16,7 @@ const getWeather = async (city) => {
   weatherResults.innerHTML = `<div class="loading"></div>`;
   try {
     const response = await fetch(
-      `https://api.weatherapi.com/v1/current.json?key=xxxxyyyyzzzz&q=${city}&aqi=no`
+      `https://api.weatherapi.com/v1/current.json?key=60c62f63799746b9b42113237251503&q=${city}&aqi=no`
     );
     if (!response.ok) {
       throw new Error('ネットワークエラー');
